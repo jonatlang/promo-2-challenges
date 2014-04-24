@@ -2,6 +2,7 @@
 
 `Sqlite` is a simple database that can be used as a standalone file. If you want more information: [http://en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki/SQLite). The goal of this first exercise is to use the command line to read and query a sample database called `jukebox.sqlite`
 
+
 ### Setup
 
 First test if you have sqlite3 installed on your computer:
@@ -25,6 +26,7 @@ You can exit the sqlite3 console with `.quit` or `CTRL+D`.
 
 The goal of this exercise is to explore the Jukebox database, and understand its schema.
 Answer the following questions (the resource links and tools can be helpful!)
+
 
 1. What is the database schema? (i.e what are the tables, and the relations between tables)
 2. Use SQL Design tool to draw the schema of this database.
