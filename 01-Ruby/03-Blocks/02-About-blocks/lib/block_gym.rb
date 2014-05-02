@@ -1,12 +1,18 @@
 def tag(tag_name, attr = nil)
-  #TODO:  Build HTML tags around  content given in the block
-  #       The method can be called with an optional HTML attribute inputted as [attr_name, attr_value]
+  attr_name = attr.nil? ? nil : attr.first
+  attr_value = attr.nil? ? nil : attr.last
+
+  open_tag = attr.nil? ? tag_name : "#{tag_name} #{attr_name}='#{attr_value}'"
+  content = yield
+  "<#{open_tag}>#{content}</#{tag_name}>"
 end
 
 def timer_for
-  #TODO:  Return time taken to execute the given block
+  start_time = Time.now
+  yield
+  Time.now - start_time
 end
 
 def transform(element)
-  #TODO:  Simply execute the given block on element
+  yield element
 end

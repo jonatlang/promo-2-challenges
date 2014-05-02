@@ -1,9 +1,31 @@
+require 'csv'
+
 class Cookbook
   def initialize(file)
-    # TODO: Retrieve the data from your CSV file and store it in an instance variable
+    @file = file
+    @recipes = CSV.read(file).flatten
+  end
+  def all
+    @recipes
   end
 
-  # TODO: Implement the methods to retrieve all recipes, create, or destroy recipes
-  # TODO: Implement a save method that will write the data into the CSV
-  # And don't forget to use this save method when you have to modify something in your recipes array.
+  def create(recipe)
+    @recipes << recipe.capitalize
+    self.save
+    recipe # Here we just return the object that has been added
+  end
+
+  def destroy(id)
+    recipe = @recipes.delete_at(id)
+    self.save
+    recipe # Here we just return the object that has been destroyed
+  end
+
+  def save
+    CSV.open(@file, 'w') do |csv|
+      @recipes.each do |recipe|
+        csv.puts([recipe])
+      end
+    end
+  end
 end

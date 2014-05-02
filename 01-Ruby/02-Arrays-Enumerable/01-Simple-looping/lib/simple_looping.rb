@@ -1,15 +1,10 @@
-def sum_with_while(min,max)
-  #TODO: return the sum of the integers between min and max
-  #CONSTRAINT: you should use a while..end structure
-end
+require relative "def"
 
-def sum_with_for(min,max)
-  #TODO: return the sum of the integers between min and max
-  #CONSTRAINT: you should use a for..end structure
-end
+puts"quel est votre date de naissance?"
+year = get.chomps.to_i
+puts"quel est votre moi de naissance?"
+month = get.chomps.to_i
+puts "quel est votre jour de naissance?"
+day = get.chomps.to_i
 
-def sum_recursive(min,max)
-  #TODO (optional): return the sum of the integers between min and max
-  #CONSTRAINT: you should use a recursive algorithm, i.e. the method should call itself
-end
-
+calculated age = age_in_days(year, month, day)
